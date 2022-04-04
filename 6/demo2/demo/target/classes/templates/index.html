@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        h1 {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            text-align: center;
+            background: white;
+            color: #000000;
+        }
+        a:link {
+            border-bottom: 1px dashed;
+        }
+        a:visited {
+            color: #696969;
+        }
+        a:hover {
+            color: #DCDCDC;
+            border-bottom: .07em solid;
+        }
+        a:active {
+            border-bottom: 1px dashed;
+        }
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            color: #686461;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            margin: auto;
+        }
+        th {
+            border-bottom: 3px solid #B9B29F;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background: #E8E6D1;
+        }
+        tr:nth-child(odd) {
+            background: white;
+        }
+        body {
+            background-attachment: fixed ;
+            background-position: top center;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Billie</title>
+</head>
+<body>
+<a href="https://youtu.be/YKKh8d4wZbU" target="_blank"><h1>Mystic G!rls</h1></a>
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Позиция</td>
+        <td>Цвет</td>
+        <td>Дата рождения</td>
+        <td>Фото</td>
+    </tr>
+<tr th:each="billie : ${billies}">
+    <td th:text="${billie.name}"></td>
+    <td th:text="${billie.position}"></td>
+    <td th:text="${billie.color}"></td>
+    <td th:text="${billie.birthDate}"></td>
+    <td><img height="100px" src="" th:src="${billie.image}" alt="she's beautiful"></td>
+</tr>
+</table>
+
+</body>
+</html>
